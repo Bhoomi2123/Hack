@@ -31,6 +31,10 @@ body {
   margin-top: 100px;
 }
 
+.img {
+  animation: appeared 3s linear;
+}
+
 .hero .first {
   font-size: 50px;
   font-family: "Poppins", sans-serif;
@@ -39,26 +43,37 @@ body {
   position: relative;
 }
 
-.first::after{
-    content: '|';
-    position: absolute;
-    right: 0;
-    color: #f4f4f4;
-    background-color: #f4f4f4;
+.first {
+  display: inline-block;
+  font-family: monospace;
+  font-size: 2em;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid black;
+  animation: typewriter 3s steps(30, end), blinkCursor 0.75s step-end infinite;
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
     width: 100%;
-    animation: typing 3s infinite, line 1s infinite;
+    opacity: 1;
+  }
 }
 
-@keyframes typing {
-    to{
-        width: 0%;
-    }
-}
-
-@keyframes line {
-    50%{
-        color: transparent;
-    }
+@keyframes blinkCursor {
+  0% {
+    border-right: 2px solid transparent;
+  }
+  50% {
+    border-right: 2px solid black;
+  }
+  100% {
+    border-right: 2px solid transparent;
+  }
 }
 
 .hero .second {
@@ -100,48 +115,6 @@ body {
   }
 }
 
-@keyframes appear{
-    from{
-        opacity: 0;
-        transform: translateX(-100px);
-    }
-    to{
-        opacity: 1;
-        transform: translateX(0px);
-    }
-}
-
-@keyframes appeared{
-    from{
-        opacity: 0;
-        scale: 0.5;
-    }
-    to{
-        opacity: 1;
-        scale: 1;
-    }
-}
-
-.text{
-    animation: appeared linear;
-    animation-timeline: view();
-    animation-range: entry 0% cover 40%;
-}
-
-.img{
-    animation: appeared 3s linear infinite;
-}
-
-.first{
-    animation: appeared 1s linear;
-}
-
-img{
-    animation: appear 2s linear;
-    animation-timeline: view();
-    animation-range: entry 0% cover 40%;
-}
-
 .first-sec {
   display: flex;
   justify-content: space-evenly;
@@ -164,6 +137,23 @@ img{
   box-shadow: 5px;
 }
 
+img {
+  animation: appear 2s linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
 .image {
   margin-top: 10px;
   margin-left: 128px;
@@ -175,6 +165,20 @@ img{
   margin-left: 124px;
   margin-right: 74px;
   padding: 34px 0px;
+  animation: appeared linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+
+@keyframes appeared {
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
 }
 
 .text2 {
