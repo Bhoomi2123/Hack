@@ -132,9 +132,9 @@ body {
 .secimg img {
   height: 480px;
   z-index: 10;
-  border: 1px solid black;
-  border-radius: 18px;
-  box-shadow: 5px;
+  /* border: 1px solid black;
+  border-radius: 18px; */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 img {
